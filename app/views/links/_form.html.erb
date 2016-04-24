@@ -1,4 +1,4 @@
-<%= form_for(@link) do |f| %>
+<%= form_for @link, html: { multipart:true } do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
 
   <div class="form-group">
     <%= f.label :title %><br>
@@ -17,7 +21,9 @@
   </div>
   <div class="form-group">
     <%= f.label :url %><br>
-    <%= f.text_field :url, class: "form-control" %>
+  If uploading a link, please use https://webaddress.com format<br>
+  Otherwise leave this field empty
+  <%= f.text_field :url, class: "form-control" %>
   </div>
   <br>
   <div class="form-group">
