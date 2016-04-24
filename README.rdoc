@@ -4,4 +4,4 @@ My goal with this challenge is to teach myself Ruby on Rails by building a new w
 
 This week I built a link aggregator site, similar to Reddit or Hacker News, where a user can sign up, submit a link, as well as comment and vote up or down on link submissions.
 
-{View the demo application here}[http://raddit.herokuapp.com/]
+{View the demo application here}[http://Techitt.herokuapp.com/]
