@@ -2,7 +2,16 @@ class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authorized_user, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  def index
+    ordered_links = Link.order(cached_votes_up: :desc)
+    @links = ordered_links.paginate(page: params[:page], per_page: 5)
 
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
   # GET /links
   # GET /links.json
   def index
@@ -88,6 +97,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:title, :url)
+      params.require(:link).permit(:title, :url, :image)
     end
 end
