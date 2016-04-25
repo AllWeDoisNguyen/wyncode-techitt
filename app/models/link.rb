@@ -4,4 +4,8 @@ class Link < ActiveRecord::Base
 	has_many :comments
 	has_attached_file :image, styles: { medium: "300x300>", thumb: "150x150#" }
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+	def self.sort_by_upvotes(posts)
+		posts = posts.sort{|a,b| b.get_upvotes.size <=> a.get_upvotes.size}
+	end
 end

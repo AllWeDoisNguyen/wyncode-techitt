@@ -1,4 +1,4 @@
-<% @links.each do |link| %>
+<% Link.order(:cached_votes_down).each do |link| %>
 
 
   <div class="link row clearfix">
