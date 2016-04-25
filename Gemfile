@@ -18,3 +18,4 @@ gem 'spring',        group: :development
 gem 'sqlite3'
 gem 'pry-rails'
 gem 'pry-byebug'
+gem 'omniauth-twitter'
