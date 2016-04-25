@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Techitt</title>
+  <link rel="shortcut icon" href="http://www.iconj.com/ico/y/p/ypo2gbohy5.ico" type="image/x-icon" />
+  <title>instacrap</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,11 +11,11 @@
 	<header class="navbar navbar-default" role="navigation">
     <div class="navbar-inner">
       <div class="container">
-        <div id="logo" class="navbar-brand"><%= link_to "Techitt", root_path %></div>
+        <div id="logo" class="navbar-brand"><%= link_to "instacrap", root_path %></div>
         <nav class="collapse navbar-collapse navbar-ex1-collapse">
         	<% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-right">
-							<li><%= link_to 'Submit Post', new_link_path %></li>
+							<li><%= link_to 'Create New Post', new_link_path %></li>
 							<li><%= link_to 'Account', edit_user_registration_path %></li>
 							<li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
 						</ul>
@@ -28,6 +29,7 @@
       </div>
     </div>
   </header>
+
 
 	<div id="main_content" class="container">
 		<% flash.each do |name, msg| %>

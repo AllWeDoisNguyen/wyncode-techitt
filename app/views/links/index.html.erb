@@ -1,7 +1,32 @@
+<link rel="shortcut icon" href="http://www.iconj.com/ico/y/p/ypo2gbohy5.ico" type="image/x-icon" />
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1164450156912630',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
 <% Link.order(:cached_votes_down).each do |link| %>
 
 
   <div class="link row clearfix">
+
     <h2>
 
       <%= link_to link.title, link %><br>
@@ -13,14 +38,15 @@
       <a class="btn btn-default btn-sm" href="<%= link.url %>">Visit Link</a>
       <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-chevron-up"></span>
-        Upvote
+        Like
         <%= link.get_upvotes.size %>
       <% end %>
       <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-chevron-down">
-        Downvote
+        Dislike
         <%= link.get_downvotes.size %>
-      <% end %>
+      <% end %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link.comments.count %> Comments
+
     </div>
   </div>
 <% end %>

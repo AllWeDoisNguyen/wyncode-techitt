@@ -15,7 +15,10 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'sqlite3'
+gem 'pg'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-linkedin'
