@@ -13,33 +13,79 @@
  *= require_tree .
  *= require_self
  */
-
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+body {
+	background-color: white;
+}
+.one {
+	overflow: auto;
+}
+.two {
+	float: right;
+}
+.author {
+	font-size: 14px;
+}
 #logo {
+	font-family: 'Pacifico';
 	font-size: 26px;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: -1px;
+	text-transform: lowercase;
 	padding: 15px 0;
 	a {
-		color: #2F363E;
+		color: white;
+		text-shadow: 2px 2px 3px black;
+	}
+	a:hover {
+		text-decoration: none;
+		color: white;
+	}
+	small {
+		a:hover{
+			color: none;
+		}
 	}
 }
-
+.navbar-inner{
+	small {
+		font-size: 16px;
+	}
+	 box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+	width: 100%;
+	position: fixed;
+	background-color: rgba(42, 169, 237, 0.7);
+	color: #565656;
+	z-index: 1;
+}
 #main_content {
+
+	.container {
+		margin-top: 0;
+	}
+	a {
+		color: black;
+	}
+	a:hover {
+		text-decoration: none;
+		color: rgba(42, 169, 237, 1);
+	}
 	#content {
 		float: none;
 	}
 	padding-bottom: 100px;
 	.link {
+		margin-left: 40px;
 		padding: 2em 1em;
 		border-bottom: 1px solid #e9e9e9;
 		.title {
 
 			a {
 				color: #FF4500;
+
+			}
+			a:hover {
+				text-decoration: none;
 			}
 		}
 	}

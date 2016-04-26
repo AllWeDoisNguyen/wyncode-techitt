@@ -1,3 +1,6 @@
+<link rel="shortcut icon" href="http://www.iconj.com/ico/y/p/ypo2gbohy5.ico" type="image/x-icon" />
+
+
 <%= form_for @link, html: { multipart:true } do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +14,13 @@
     </div>
   <% end %>
   <div class="form-group">
-    <%= f.label :image %><br>
+    <%= f.label :image %><strong>/Gif</strong><br>
     <%= f.file_field :image, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :title %><br>
+    Please add a title or your post will be deleted
     <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="form-group">
@@ -31,3 +35,26 @@
   </div>
 
 <% end %>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1164450156912630',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>

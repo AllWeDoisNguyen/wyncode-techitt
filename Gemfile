@@ -16,5 +16,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'sqlite3'
-gem 'omniauth-twitter'
 gem 'twitter'
+gem 'pg'
+gem 'rails_12factor', group: :production
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-linkedin'
+

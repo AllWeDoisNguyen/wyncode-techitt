@@ -1,7 +1,13 @@
-<% @links.each do |link| %>
+<link rel="shortcut icon" href="http://www.iconj.com/ico/y/p/ypo2gbohy5.ico" type="image/x-icon" />
+<script type='text/javascript'>
+(function() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//d2yy16lkdmfg04.cloudfront.net/resource/chat.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+})(); window.embeddedChatAsyncInit = function() { embeddedChat.init("7481"); }
+</script>
+<% Link.order(:cached_votes_down).each do |link| %>
 
 
   <div class="link row clearfix">
+
     <h2>
 
       <%= link_to link.title, link %><br>
@@ -13,14 +19,15 @@
       <a class="btn btn-default btn-sm" href="<%= link.url %>">Visit Link</a>
       <%= link_to like_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-chevron-up"></span>
-        Upvote
+        Like
         <%= link.get_upvotes.size %>
       <% end %>
       <%= link_to dislike_link_path(link), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-chevron-down">
-        Downvote
+        Dislike
         <%= link.get_downvotes.size %>
-      <% end %>
+      <% end %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link.comments.count %> Comments
+
     </div>
   </div>
 <% end %>
