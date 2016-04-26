@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.2'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'uglifier', '>= 1.3.0'
@@ -15,6 +15,8 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'sqlite3'
+gem 'twitter'
 gem 'pg'
 gem 'rails_12factor', group: :production
 gem 'pry-rails'
@@ -23,3 +25,4 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'omniauth-linkedin'
+

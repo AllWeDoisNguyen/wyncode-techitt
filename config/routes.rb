@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :comments
 
-  devise_for :users
   resources :links do
     member do
       put "like", to:    "links#upvote"
       put "dislike", to: "links#downvote"
     end
     resources :comments
+  
+  get "users/auth/twitter/", to: "sessions#create"
+  
   end
   root "links#index"
 

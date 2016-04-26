@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+# ActiveRecord::Schema.define(version: 20160425022757) do
 ActiveRecord::Schema.define(version: 20160425000651) do
 
+<<<<<<< HEAD
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+=======
+>>>>>>> 9a74d9f60039c2ac1d2f7d7e7db2ab828833a61e
 
   create_table "comments", force: true do |t|
     t.integer  "link_id"
@@ -63,6 +68,8 @@ ActiveRecord::Schema.define(version: 20160425000651) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
