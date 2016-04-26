@@ -25,4 +25,4 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'figaro'
-
+gem 'rails-erd'
