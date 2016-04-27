@@ -76,7 +76,15 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
+  # config/environments/production.rb
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['instacrap'],
+    :access_key_id => ENV['AKIAIMPSUZOZDN67LZBA'],
+    :secret_access_key => ENV['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']
+  }
+}
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end

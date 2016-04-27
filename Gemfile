@@ -25,4 +25,4 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'omniauth-linkedin'
-
+gem 'aws-sdk'
