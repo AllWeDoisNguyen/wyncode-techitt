@@ -4,7 +4,7 @@ class Link < ActiveRecord::Base
 	acts_as_votable
 	belongs_to :user
 	has_many :comments
-	has_attached_file :picture, :image, styles: { medium: "300x300", thumb: "150x150#" },
+	has_attached_file :image, styles: { medium: "300x300", thumb: "150x150#" },
 	storage: :s3,
 	:bucket => 'wyncode-techit',
 	:s3_credentials => {
@@ -18,8 +18,6 @@ class Link < ActiveRecord::Base
 		posts = posts.sort{|a,b| b.get_upvotes.size <=> a.get_upvotes.size}
 	end
 
-	def picture_from_url(url)
-    self.picture = open(url)
-  	end
+
 end
 
