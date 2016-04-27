@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
     resources :comments
   
-  get "users/auth/twitter/callback", to: "sessions#create"
+  get "users/auth/twitter/", to: "sessions#create"
   
   end
   root "links#index"
