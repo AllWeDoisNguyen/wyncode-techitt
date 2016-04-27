@@ -80,9 +80,9 @@ Rails.application.configure do
 config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['instacrap'],
-    :access_key_id => ENV['AKIAIMPSUZOZDN67LZBA'],
-    :secret_access_key => ENV['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']
+    :bucket => 'techitt',
+    :access_key_id => ENV['ACCESS_KEY_ID'],
+    :secret_access_key => ENV['SECRET_ACCESS_ID']
   }
 }
   # Do not dump schema after migrations.
