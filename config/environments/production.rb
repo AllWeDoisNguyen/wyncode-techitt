@@ -81,8 +81,8 @@ config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
     :bucket => 'techitt',
-    :access_key_id => ENV['ACCESS_KEY_ID'],
-    :secret_access_key => ENV['SECRET_ACCESS_ID']
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
   # Do not dump schema after migrations.
