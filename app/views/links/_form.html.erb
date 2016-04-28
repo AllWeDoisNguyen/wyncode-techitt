@@ -1,0 +1,64 @@
+<link rel="shortcut icon" href="http://www.iconj.com/ico/y/p/ypo2gbohy5.ico" type="image/x-icon" />
+<script type='text/javascript'>
+(function() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//d2yy16lkdmfg04.cloudfront.net/resource/chat.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+})(); window.embeddedChatAsyncInit = function() { embeddedChat.init("7481"); }
+</script>
+
+<%= form_for @link, html: { multipart:true } do |f| %>
+  <% if @link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+      <% @link.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <%= f.label :image %><strong>/Gif</strong><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    Please add a title or your post will be deleted
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :url %><br>
+  If uploading a link, please use https://webaddress.com format<br>
+  Otherwise leave this field empty
+  <%= f.text_field :url, class: "form-control" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+  </div>
+
+<% end %>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1164450156912630',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>

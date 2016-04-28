@@ -1,0 +1,24 @@
+.twitter-wrapper {
+  width:250px; 
+  margin:auto;
+  padding:70px 35px;
+  border-radius:50%;
+  background:   #161717;
+  box-shadow:
+    0px 0px 50px  #349bd3   inset,
+    0px -20px 20px #349bd3  inset,
+    0px 25px 20px  #349bd3  inset;
+  text-align:center;
+
+}
+.twitter-wrapper > iframe {
+   margin: auto;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 5em;
+  width: 200px;
+  background-color: white
+}
